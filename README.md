@@ -11,10 +11,24 @@ JSP를 이용한 동국대학교 주변 식당 예약 및 후기 공유 웹 사�
 
 #### 개발환경
 
+* 웹 브라우저 : Chrome
+* 웹 컨테이너 : Tomcat 
+* 프로그래밍 언어 : Java, HTML, CSS, Javascript, JSP
+* 프로그래밍 개발 환경 : JDK
 * IDE : IntelliJ
-* 사용언어 : Java, HTML, CSS, Javascript, JSP
-* RDMS: MySQL
-* 
+* 웹 디자인 프레임워크 : Bootstrap(Jquery)
+* 데이터베이스 : MySQL
+
+
+
+#### 개발과정
+
+① 개발환경 구축
+② 웹 디자인 - Bootstrap 프레임워크를 사용하여 프론트엔드 디자인
+③ 데이터베이스 설계 및 구축
+④ JSP 개발 및 데이터베이스 연동 - JSP를 사용하여 백엔드를 구축하여 웹 사이트 기능 추가
+⑤ 테스트
+⑥ 배포 및 유지, 보수
 
 
 
