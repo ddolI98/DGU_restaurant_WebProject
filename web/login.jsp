@@ -56,9 +56,9 @@
     </div><br>
     <button class="w-100 btn btn-lg btn" type="submit" style="background-color: #FAF1D6">로그인</button>
     <br><br>
-    <div class="d-grid gap-2 d-md-block">
-        <button class="btn btn" type="button" style="background-color: #FFFFFF">아이디/비밀번호 찾기</button>
-        <button class="btn btn" type="button" onclick="location.href='signUp.jsp'" style="background-color: #FFFFFF">회원가입</button>
+    <div class="d-grid gap-2 d-md-block col-12 d-flex">
+        <button class="btn btn col-5" type="button" style="background-color: #FFFFFF">아이디/비밀번호 찾기</button>
+        <button class="btn btn col-5" type="button" onclick="location.href='signUp.jsp'" style="background-color: #FFFFFF">회원가입</button>
     </div>
 </form>
 </section>

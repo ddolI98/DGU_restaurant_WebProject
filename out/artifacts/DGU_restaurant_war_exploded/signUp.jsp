@@ -113,7 +113,7 @@
 
             <div class="my-3">
                 <label class="form-label">이용 목적</label>
-                <div class="form-check">
+                <div class="form-check-label">
                     <input id="president" name="purpose" type="radio" class="form-check-input" checked required>
                     <label class="form-check-label" for="president">사장님</label>
                 </div>
