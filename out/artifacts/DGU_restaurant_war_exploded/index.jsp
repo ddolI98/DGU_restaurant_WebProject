@@ -37,8 +37,10 @@
             </ul>
 <%
     String loginID = null;
+    String userName = null;
     if(session.getAttribute("loginID") != null) {
         loginID = (String) session.getAttribute("loginID");
+        userName = (String) session.getAttribute("userName");
     }
     if(loginID == null) {
 %>
@@ -52,7 +54,7 @@
             <ul class="navbar-nav d-flex">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <%=loginID %> 님
+                        <%=userName %> 님
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #FAF1D6;">
                         <li><a class="dropdown-item" href="#">마이페이지</a></li>

@@ -36,6 +36,32 @@ public class userDAO {
         return -2;
     }
 
+    public static String[] userInfo(String loginID) {
+        String SQL = "SELECT userName, nickname, mailAddress, userAge, phoneNumber, userAddress FROM USER WHERE loginID = ?";
+        String[] info = new String[6];
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            conn = databaseUtil.getConnection();
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, loginID);
+            rs = pstmt.executeQuery();
+            System.out.println(rs);
+            if(rs.next()) {
+                info[0] = rs.getString(1);
+                info[1] = rs.getString(2);
+                info[2] = rs.getString(3);
+                info[3] = rs.getString(4);
+                info[4] = rs.getString(5);
+                info[5] = rs.getString(6);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return info;
+    }
+
     public static int join(String loginID, String password, String nickName, String mailAddress, String userName, String userAge, String phoneNumber, String userAddress) {
         String SQL = "INSERT INTO USER(loginID, password, nickName, mailAddress, userName, userAge, phoneNumber, userAddress) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 
