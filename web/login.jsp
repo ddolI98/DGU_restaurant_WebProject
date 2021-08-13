@@ -47,12 +47,12 @@
     <img src="./img/mainIcon.svg" class="rounded" width="250"><br><br>
 
     <div class="form-floating">
-        <input type="ID" class="form-control" id="floatingInput" placeholder="name@example.com" style="border-bottom-color: #FFFFFF; border-radius: 5px 5px 0px 0px;">
-        <label for="floatingInput">ID</label>
+        <input type="ID" class="form-control" name="loginID" id="loginID" placeholder="name@example.com" style="border-bottom-color: #FFFFFF; border-radius: 5px 5px 0px 0px;">
+        <label for="loginID">ID</label>
     </div>
     <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" style="border-radius: 0px 0px 5px 5px;">
-        <label for="floatingPassword">Password</label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Password" style="border-radius: 0px 0px 5px 5px;">
+        <label for="password">Password</label>
     </div><br>
     <button class="w-100 btn btn-lg btn" type="submit" style="background-color: #FAF1D6">로그인</button>
     <br><br>

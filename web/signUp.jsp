@@ -123,7 +123,7 @@
                 </div>
             </div>
         </div>
-        <button class="w-100 btn btn-lg btn" type="submit" style="background-color: #FAF1D6">회원가입</button>
+        <button class="w-100 btn btn-lg btn" type="submit" style="background-color: #FAF1D6;">회원가입</button>
     </form>
 </div>
 

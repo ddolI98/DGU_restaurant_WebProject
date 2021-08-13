@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.io.PrintWriter"%>
+<%@ page import="user.userDAO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,16 +30,41 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #FAF1D6;">
                         <li><a class="dropdown-item" href="#">공지사항</a></li>
                         <li><a class="dropdown-item" href="#">이벤트</a></li>
-                        <li><a class="dropdown-item" href="#">1:1 문의</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">신고하기</a></li>
                     </ul>
                 </li>
             </ul>
+<%
+    String loginID = null;
+    if(session.getAttribute("loginID") != null) {
+        loginID = (String) session.getAttribute("loginID");
+    }
+    if(loginID == null) {
+%>
             <ul class="navbar-nav d-flex">
                 <a class="nav-link" aria-current="page" href="signUp.jsp">회원가입</a>
                 <a class="btn btn-outline-warning" href="login.jsp" style="border-color: #FFD6AA" style="color: #FFD6AA">로그인</a>
             </ul>
+<%
+    } else {
+%>
+            <ul class="navbar-nav d-flex">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <%=loginID %> 님
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #FAF1D6;">
+                        <li><a class="dropdown-item" href="#">마이페이지</a></li>
+                        <li><a class="dropdown-item" href="#">1:1 문의</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="logout.jsp">로그아웃</a></li>
+                    </ul>
+                </li>
+            </ul>
+<%
+    }
+%>
         </div>
     </div>
 </nav>
@@ -49,7 +76,7 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active" id="first">
-            <img src="./img/mainImg.png" class="d-block w-100" alt="첫번째">
+            <img src="./img/mainImg.svg" class="d-block w-100" alt="첫번째">
         </div>
         <div class="carousel-item" id="second">
             <img src="./img/chicken.png" class="d-block w-100" alt="두번째">
