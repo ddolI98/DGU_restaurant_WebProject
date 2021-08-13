@@ -6,7 +6,6 @@
     request.setCharacterEncoding("UTF-8");
     String loginID = null;
     String password = null;
-    String userName = null;
 
     if(request.getParameter("loginID") != null) {
         loginID = (String) request.getParameter("loginID");
