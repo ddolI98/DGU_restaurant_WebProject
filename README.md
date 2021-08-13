@@ -15,7 +15,7 @@ JSP를 이용한 동국대학교 주변 식당 예약 및 후기 공유 웹 사�
 
 #### 개발환경
 
-* 웹 브라우저 : Chrome
+* 웹 브라우저 : Chrome 
 * 웹 컨테이너 : Tomcat 
 * 프로그래밍 언어 : Java, HTML, CSS, Javascript, JSP
 * 프로그래밍 개발 환경 : JDK
