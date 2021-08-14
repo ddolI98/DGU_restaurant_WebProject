@@ -43,11 +43,11 @@
 </nav>
 <br><br><br><br><br><br><br><br><br><br><br>
 <section class="container" style="max-width:500px;">
-<form method="post" action="loginAction.jsp">
+<form method="post" action="action/loginAction.jsp">
     <img src="./img/mainIcon.svg" class="rounded" width="250"><br><br>
 
     <div class="form-floating">
-        <input type="ID" class="form-control" name="loginID" id="loginID" placeholder="name@example.com" style="border-bottom-color: #FFFFFF; border-radius: 5px 5px 0px 0px;">
+        <input type="ID" class="form-control" name="loginID" id="loginID" placeholder="ID" style="border-bottom-color: #FFFFFF; border-radius: 5px 5px 0px 0px;">
         <label for="loginID">ID</label>
     </div>
     <div class="form-floating">
@@ -56,7 +56,7 @@
     </div><br>
     <button class="w-100 btn btn-lg btn" type="submit" style="background-color: #FAF1D6">로그인</button>
     <br><br>
-    <div class="d-grid gap-2 d-md-block col-12 d-flex">
+    <div class="gap-2 d-md-block col-12 d-flex">
         <button class="btn btn col-5" type="button" style="background-color: #FFFFFF">아이디/비밀번호 찾기</button>
         <button class="btn btn col-5" type="button" onclick="location.href='signUp.jsp'" style="background-color: #FFFFFF">회원가입</button>
     </div>

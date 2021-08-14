@@ -34,18 +34,44 @@
     if(request.getParameter("phoneNumber") != null) {
         phoneNumber = (String) request.getParameter("phoneNumber");
     }
-    if(request.getParameter("userAddress") != null) {
-        userAddress = (String) request.getParameter("userAddress");
+    if(request.getParameter("postCode") != null) {
+        userAddress = "(" + (String) request.getParameter("postCode") + ") " +
+                (String) request.getParameter("address") + " " +
+        (String) request.getParameter("detailAddress") +
+                (String) request.getParameter("extraAddress");
     }
     userDAO userdao = new userDAO();
-    int result = userdao.join(loginID, password, nickName, mailAddress, userName, userAge, phoneNumber, userAddress);
-    if(result == 1) {
+    int result;
+    boolean checkID = userdao.checkID(loginID);
+    boolean checkNickName = userdao.checkNickName(nickName);
+
+    if (checkID == false && checkNickName == false) {
+        result = userdao.join(loginID, password, nickName, mailAddress, userName, userAge, phoneNumber, userAddress);
+        if(result == 1) {
+            PrintWriter script = response.getWriter();
+            script.println("<script>");
+            script.println("alert('회원가입에 성공했습니다.');");
+            script.println("location.href = './../index.jsp';");
+            script.println("</script>");
+            script.close();
+            return;
+        }
+    }
+    else if (checkID == false) {
         PrintWriter script = response.getWriter();
         script.println("<script>");
-        script.println("alert('회원가입에 성공했습니다.');");
-        script.println("location.href = 'index.jsp';");
+        script.println("alert('중복되는 닉네임 입니다.');");
+        script.println("history.back();");
         script.println("</script>");
         script.close();
-        return;
     }
+    else {
+        PrintWriter script = response.getWriter();
+        script.println("<script>");
+        script.println("alert('중복되는 ID 입니다.');");
+        script.println("history.back();");
+        script.println("</script>");
+        script.close();
+    }
+
 %>

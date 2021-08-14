@@ -46,7 +46,7 @@
 %>
             <ul class="navbar-nav d-flex">
                 <a class="nav-link" aria-current="page" href="signUp.jsp">회원가입</a>
-                <a class="btn btn-outline-warning" href="login.jsp" style="border-color: #FFD6AA" style="color: #FFD6AA">로그인</a>
+                <a class="btn btn-outline-warning" href="login.jsp" style="border-color: #FFD6AA; color: #FFD6AA">로그인</a>
             </ul>
 <%
     } else {

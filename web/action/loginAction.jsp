@@ -21,12 +21,12 @@
     }
     userDAO userdao = new userDAO();
     int result = userdao.login(loginID, password);
-    String[] info = userdao.userInfo(loginID);
+    String[] info = userdao.getInfo(loginID);
     if(result == 1) {
         session.setAttribute("loginID", loginID);
         PrintWriter script = response.getWriter();
         script.println("<script>");
-        script.println("location.href = 'index.jsp';");
+        script.println("location.href = './../index.jsp';");
         script.println("</script>");
         script.close();
 

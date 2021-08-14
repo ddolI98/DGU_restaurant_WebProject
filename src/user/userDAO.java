@@ -4,8 +4,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import util.databaseUtil;
 
-import java.sql.PreparedStatement;
-
 public class userDAO {
     public static int login(String loginID, String password) {
         String SQL = "SELECT password FROM USER WHERE loginID = ?";
@@ -36,7 +34,7 @@ public class userDAO {
         return -2;
     }
 
-    public static String[] userInfo(String loginID) {
+    public static String[] getInfo(String loginID) {
         String SQL = "SELECT userName, nickname, mailAddress, userAge, phoneNumber, userAddress FROM USER WHERE loginID = ?";
         String[] info = new String[6];
         Connection conn = null;
@@ -47,7 +45,6 @@ public class userDAO {
             pstmt = conn.prepareStatement(SQL);
             pstmt.setString(1, loginID);
             rs = pstmt.executeQuery();
-            System.out.println(rs);
             if(rs.next()) {
                 info[0] = rs.getString(1);
                 info[1] = rs.getString(2);
@@ -81,6 +78,40 @@ public class userDAO {
             e.printStackTrace();
         }
         return -1;
+    }
+
+    public static boolean checkID(String loginID) {
+        String SQL = "SELECT loginID FROM USER WHERE loginID = ?";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            conn = databaseUtil.getConnection();
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, loginID);
+            rs = pstmt.executeQuery();
+            if(rs.next()) return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static boolean checkNickName(String nickName) {
+        String SQL = "SELECT nickName FROM USER WHERE nickName = ?";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            conn = databaseUtil.getConnection();
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, nickName);
+            rs = pstmt.executeQuery();
+            if(rs.next()) return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
 }
