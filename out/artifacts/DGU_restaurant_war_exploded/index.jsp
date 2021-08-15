@@ -156,7 +156,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="restaurant.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -207,7 +207,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="restaurant.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -258,7 +258,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="restaurant.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -309,7 +309,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="restaurant.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -360,7 +360,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="restaurant.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -411,7 +411,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="restaurant.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -462,7 +462,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="restaurant.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
