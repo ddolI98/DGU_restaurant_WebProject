@@ -494,9 +494,6 @@
     </div>
 </div>
 
-
-
->>>>>>> Stashed changes
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
     전화번호 : 010-9564-3580<br>
     Copyright &copy; 2021 ddolI98 All Rights Reserved.
