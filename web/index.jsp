@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="user.userDAO"%>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="util.databaseUtil" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,12 +13,12 @@
     <title>맛동국</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/custom.css">
-    <link rel="icon" href="./img/favicon.png">
+    <link rel="icon" href="./image/favicon.png">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #FAF1D6;">
     <div class="container-xxl d-flex align-items-md-center">
-        <a class="navbar-brand" href="index.jsp"><img src="./img/mainIcon.svg" class="rounded float-start" width="120"></a>
+        <a class="navbar-brand" href="index.jsp"><image src="./image/mainIcon.svg" class="rounded float-start" width="120"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -78,13 +82,13 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active" id="first">
-            <img src="./img/mainImg.svg" class="d-block w-100" alt="첫번째">
+            <img src="./image/mainImg.svg" class="d-block w-100" alt="첫번째">
         </div>
         <div class="carousel-item" id="second">
-            <img src="./img/chicken.png" class="d-block w-100" alt="두번째">
+            <img src="./image/chicken.png" class="d-block w-100" alt="두번째">
         </div>
         <div class="carousel-item" id="third">
-            <img src="./img/pizza.png" class="d-block w-100" alt="세번째">
+            <img src="./image/pizza.png" class="d-block w-100" alt="세번째">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#mainSlide" data-bs-slide="prev">
@@ -101,9 +105,395 @@
         <input class="form-control" type="search" style="width:450px; border-right: #FFD6AA; border-radius: 10px 0px 0px 10px" placeholder="음식점 이름, 메뉴 등을 검색하세요" aria-label="Search">
         <button class="btn btn-outline-warning" type="submit" style="width:100px; border-radius: 0px 10px 10px 0px">검색</button>
     </form>
+</div><br><br>
+<ul class="nav nav-tabs container" id="nav-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="allTab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true" style="color:#000000">전체</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="KoreanTab" data-bs-toggle="tab" data-bs-target="#Korean" type="button" role="tab" aria-controls="Korean" aria-selected="false" style="color:#000000">한식</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="ChineseTab" data-bs-toggle="tab" data-bs-target="#Chinese" type="button" role="tab" aria-controls="Chinese" aria-selected="false" style="color:#000000">중식</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="JapaneseTab" data-bs-toggle="tab" data-bs-target="#Japanese" type="button" role="tab" aria-controls="Japanese" aria-selected="false" style="color:#000000">일식</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="WesternTab" data-bs-toggle="tab" data-bs-target="#Western" type="button" role="tab" aria-controls="Western" aria-selected="false" style="color:#000000">양식</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="BarTab" data-bs-toggle="tab" data-bs-target="#Bar" type="button" role="tab" aria-controls="Bar" aria-selected="false" style="color:#000000">술집</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="CoffeeTab" data-bs-toggle="tab" data-bs-target="#Coffee" type="button" role="tab" aria-controls="Coffee" aria-selected="false" style="color:#000000">카페</button>
+    </li>
+</ul><br>
+
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="allTab">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                <%
+                    int serialNum;
+                    String name;
+                    String explane;
+                    String mainImg;
+                    String SQL = "SELECT * FROM RESTAURANT";
+                    Connection conn = null;
+                    PreparedStatement pstmt = null;
+                    ResultSet rs = null;
+                    try {
+                        conn = databaseUtil.getConnection();
+                        pstmt = conn.prepareStatement(SQL);
+                        rs = pstmt.executeQuery();
+
+
+                        while(rs.next()) {
+                            serialNum = Integer.parseInt(rs.getString(1));
+                            name = rs.getString(2);
+                            explane = rs.getString(3);
+                            mainImg = rs.getString(5);
+                %>
+                <div class="col">
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="card-text"><%= name %></h4>
+                            <div class="text-end">
+                                <img src="./image/star.svg" style="width:15px">
+                                <small class="text-muted">별점</small>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;margin-bottom: 10px">
+                            <p class="card-text"><%= explane%></p>
+                        </div>
+                    </div>
+                </div>
+                <%
+                        }
+                        rs.close();
+                        pstmt.close();
+                        conn.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        try {if(conn != null) conn.close();} catch (Exception e) {e.printStackTrace();}
+                        try {if(pstmt != null) pstmt.close();} catch (Exception e) {e.printStackTrace();}
+                        try {if(rs != null) rs.close();} catch (Exception e) {e.printStackTrace();}
+                    }
+                %>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="Korean" role="tabpanel" aria-labelledby="KoreanTab">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                <%
+                    SQL = "SELECT * FROM RESTAURANT WHERE category='한식'";
+                    conn = null;
+                    pstmt = null;
+                    rs = null;
+                    try {
+                        conn = databaseUtil.getConnection();
+                        pstmt = conn.prepareStatement(SQL);
+                        rs = pstmt.executeQuery();
+
+
+                        while(rs.next()) {
+                            serialNum = Integer.parseInt(rs.getString(1));
+                            name = rs.getString(2);
+                            explane = rs.getString(3);
+                            mainImg = rs.getString(5);
+                %>
+                <div class="col">
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="card-text"><%= name %></h4>
+                            <div class="text-end">
+                                <img src="./image/star.svg" style="width:15px">
+                                <small class="text-muted">별점</small>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;margin-bottom: 10px">
+                            <p class="card-text"><%= explane%></p>
+                        </div>
+                    </div>
+                </div>
+                <%
+                        }
+                        rs.close();
+                        pstmt.close();
+                        conn.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        try {if(conn != null) conn.close();} catch (Exception e) {e.printStackTrace();}
+                        try {if(pstmt != null) pstmt.close();} catch (Exception e) {e.printStackTrace();}
+                        try {if(rs != null) rs.close();} catch (Exception e) {e.printStackTrace();}
+                    }
+                %>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="Chinese" role="tabpanel" aria-labelledby="ChineseTab">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                <%
+                    SQL = "SELECT * FROM RESTAURANT WHERE category='중식'";
+                    conn = null;
+                    pstmt = null;
+                    rs = null;
+                    try {
+                        conn = databaseUtil.getConnection();
+                        pstmt = conn.prepareStatement(SQL);
+                        rs = pstmt.executeQuery();
+
+
+                        while(rs.next()) {
+                            serialNum = Integer.parseInt(rs.getString(1));
+                            name = rs.getString(2);
+                            explane = rs.getString(3);
+                            mainImg = rs.getString(5);
+                %>
+                <div class="col">
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="card-text"><%= name %></h4>
+                            <div class="text-end">
+                                <img src="./image/star.svg" style="width:15px">
+                                <small class="text-muted">별점</small>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;margin-bottom: 10px">
+                            <p class="card-text"><%= explane%></p>
+                        </div>
+                    </div>
+                </div>
+                <%
+                        }
+                        rs.close();
+                        pstmt.close();
+                        conn.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        try {if(conn != null) conn.close();} catch (Exception e) {e.printStackTrace();}
+                        try {if(pstmt != null) pstmt.close();} catch (Exception e) {e.printStackTrace();}
+                        try {if(rs != null) rs.close();} catch (Exception e) {e.printStackTrace();}
+                    }
+                %>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="Japanese" role="tabpanel" aria-labelledby="JapaneseTab">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                <%
+                    SQL = "SELECT * FROM RESTAURANT WHERE category='일식'";
+                    conn = null;
+                    pstmt = null;
+                    rs = null;
+                    try {
+                        conn = databaseUtil.getConnection();
+                        pstmt = conn.prepareStatement(SQL);
+                        rs = pstmt.executeQuery();
+
+
+                        while(rs.next()) {
+                            serialNum = Integer.parseInt(rs.getString(1));
+                            name = rs.getString(2);
+                            explane = rs.getString(3);
+                            mainImg = rs.getString(5);
+                %>
+                <div class="col">
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="card-text"><%= name %></h4>
+                            <div class="text-end">
+                                <img src="./image/star.svg" style="width:15px">
+                                <small class="text-muted">별점</small>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;margin-bottom: 10px">
+                            <p class="card-text"><%= explane%></p>
+                        </div>
+                    </div>
+                </div>
+                <%
+                        }
+                        rs.close();
+                        pstmt.close();
+                        conn.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        try {if(conn != null) conn.close();} catch (Exception e) {e.printStackTrace();}
+                        try {if(pstmt != null) pstmt.close();} catch (Exception e) {e.printStackTrace();}
+                        try {if(rs != null) rs.close();} catch (Exception e) {e.printStackTrace();}
+                    }
+                %>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="Western" role="tabpanel" aria-labelledby="WesternTab">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                <%
+                    SQL = "SELECT * FROM RESTAURANT WHERE category='양식'";
+                    conn = null;
+                    pstmt = null;
+                    rs = null;
+                    try {
+                        conn = databaseUtil.getConnection();
+                        pstmt = conn.prepareStatement(SQL);
+                        rs = pstmt.executeQuery();
+
+
+                        while(rs.next()) {
+                            serialNum = Integer.parseInt(rs.getString(1));
+                            name = rs.getString(2);
+                            explane = rs.getString(3);
+                            mainImg = rs.getString(5);
+                %>
+                <div class="col">
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="card-text"><%= name %></h4>
+                            <div class="text-end">
+                                <img src="./image/star.svg" style="width:15px">
+                                <small class="text-muted">별점</small>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;margin-bottom: 10px">
+                            <p class="card-text"><%= explane%></p>
+                        </div>
+                    </div>
+                </div>
+                <%
+                        }
+                        rs.close();
+                        pstmt.close();
+                        conn.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        try {if(conn != null) conn.close();} catch (Exception e) {e.printStackTrace();}
+                        try {if(pstmt != null) pstmt.close();} catch (Exception e) {e.printStackTrace();}
+                        try {if(rs != null) rs.close();} catch (Exception e) {e.printStackTrace();}
+                    }
+                %>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="Bar" role="tabpanel" aria-labelledby="BarTab">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                <%
+                    SQL = "SELECT * FROM RESTAURANT WHERE category='술집'";
+                    conn = null;
+                    pstmt = null;
+                    rs = null;
+                    try {
+                        conn = databaseUtil.getConnection();
+                        pstmt = conn.prepareStatement(SQL);
+                        rs = pstmt.executeQuery();
+
+
+                        while(rs.next()) {
+                            serialNum = Integer.parseInt(rs.getString(1));
+                            name = rs.getString(2);
+                            explane = rs.getString(3);
+                            mainImg = rs.getString(5);
+                %>
+                <div class="col">
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="card-text"><%= name %></h4>
+                            <div class="text-end">
+                                <img src="./image/star.svg" style="width:15px">
+                                <small class="text-muted">별점</small>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;margin-bottom: 10px">
+                            <p class="card-text"><%= explane%></p>
+                        </div>
+                    </div>
+                </div>
+                <%
+                        }
+                        rs.close();
+                        pstmt.close();
+                        conn.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        try {if(conn != null) conn.close();} catch (Exception e) {e.printStackTrace();}
+                        try {if(pstmt != null) pstmt.close();} catch (Exception e) {e.printStackTrace();}
+                        try {if(rs != null) rs.close();} catch (Exception e) {e.printStackTrace();}
+                    }
+                %>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="Coffee" role="tabpanel" aria-labelledby="CoffeeTab">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                <%
+                    SQL = "SELECT * FROM RESTAURANT WHERE category='카페'";
+                    conn = null;
+                    pstmt = null;
+                    rs = null;
+                    try {
+                        conn = databaseUtil.getConnection();
+                        pstmt = conn.prepareStatement(SQL);
+                        rs = pstmt.executeQuery();
+
+
+                        while(rs.next()) {
+                            serialNum = Integer.parseInt(rs.getString(1));
+                            name = rs.getString(2);
+                            explane = rs.getString(3);
+                            mainImg = rs.getString(5);
+                %>
+                <div class="col">
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="card-text"><%= name %></h4>
+                            <div class="text-end">
+                                <img src="./image/star.svg" style="width:15px">
+                                <small class="text-muted">별점</small>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;margin-bottom: 10px">
+                            <p class="card-text"><%= explane%></p>
+                        </div>
+                    </div>
+                </div>
+                <%
+                        }
+                        rs.close();
+                        pstmt.close();
+                        conn.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        try {if(conn != null) conn.close();} catch (Exception e) {e.printStackTrace();}
+                        try {if(pstmt != null) pstmt.close();} catch (Exception e) {e.printStackTrace();}
+                        try {if(rs != null) rs.close();} catch (Exception e) {e.printStackTrace();}
+                    }
+                %>
+            </div>
+        </div>
+    </div>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
     전화번호 : 010-9564-3580<br>
     Copyright &copy; 2021 ddolI98 All Rights Reserved.
@@ -111,5 +501,6 @@
 <script src="./js/jquery.min.js"></script>
 <script src="./js/popper.js"></script>
 <script src="./js/bootstrap.min.js"></script>
+
 </body>
 </html>

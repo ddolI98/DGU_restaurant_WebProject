@@ -10,9 +10,9 @@
     <link rel="icon" href="./img/favicon.png">
 </head>
 <body class="text-center">
-<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #FAF1D6; z-index: 2;">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #FAF1D6;">
     <div class="container-xxl d-flex align-items-md-center">
-        <a class="navbar-brand" href="index.jsp"><img src="./img/mainIcon.svg" class="rounded float-start" width="120"></a>
+        <a class="navbar-brand" href="index.jsp"><image src="./image/mainIcon.svg" class="rounded float-start" width="120"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,30 +21,57 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="index.jsp">식당</a>
                 </li>
-                <li class="nav-item dropdown ">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         더보기
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #FAF1D6;">
                         <li><a class="dropdown-item" href="#">공지사항</a></li>
                         <li><a class="dropdown-item" href="#">이벤트</a></li>
-                        <li><a class="dropdown-item" href="#">1:1 문의</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">신고하기</a></li>
                     </ul>
                 </li>
             </ul>
+            <%
+                String loginID = null;
+                String userName = null;
+                if(session.getAttribute("loginID") != null) {
+                    loginID = (String) session.getAttribute("loginID");
+                    userName = (String) session.getAttribute("userName");
+                }
+                if(loginID == null) {
+            %>
             <ul class="navbar-nav d-flex">
                 <a class="nav-link" aria-current="page" href="signUp.jsp">회원가입</a>
-                <a class="btn btn-outline-warning" href="login.jsp">로그인</a>
+                <a class="btn btn-outline-warning" href="login.jsp" style="border-color: #FFD6AA; color: #FFD6AA">로그인</a>
             </ul>
+            <%
+            } else {
+            %>
+            <ul class="navbar-nav d-flex">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <%=userName %> 님
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #FAF1D6;">
+                        <li><a class="dropdown-item" href="#">마이페이지</a></li>
+                        <li><a class="dropdown-item" href="#">1:1 문의</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="logout.jsp">로그아웃</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <%
+                }
+            %>
         </div>
     </div>
 </nav>
 <br><br><br><br><br><br><br><br><br><br><br>
 <section class="container" style="max-width:500px;">
 <form method="post" action="action/loginAction.jsp">
-    <img src="./img/mainIcon.svg" class="rounded" width="250"><br><br>
+    <img src="./image/mainIcon.svg" class="rounded" width="250"><br><br>
 
     <div class="form-floating">
         <input type="ID" class="form-control" name="loginID" id="loginID" placeholder="ID" style="border-bottom-color: #FFFFFF; border-radius: 5px 5px 0px 0px;">
