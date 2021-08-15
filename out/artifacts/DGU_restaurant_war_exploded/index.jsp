@@ -13,11 +13,7 @@
     <title>맛동국</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/custom.css">
-<<<<<<< Updated upstream
-    <link rel="icon" href="./img/favicon.png">
-=======
     <link rel="icon" href="./image/favicon.png">
->>>>>>> Stashed changes
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #FAF1D6;">
@@ -86,34 +82,6 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active" id="first">
-<<<<<<< Updated upstream
-            <img src="./img/mainImg.png" class="d-block w-100" alt="첫번째">
-        </div>
-        <div class="carousel-item" id="second">
-            <img src="./img/chicken.png" class="d-block w-100" alt="두번째">
-        </div>
-        <div class="carousel-item" id="third">
-            <img src="./img/pizza.png" class="d-block w-100" alt="세번째">
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#mainSlide" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#mainSlide" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-<div class="container-xxl" style="width:550px; margin: auto;">
-    <form class="d-flex">
-        <input class="form-control" type="search" style="width:450px; border-right: #FFD6AA; border-radius: 10px 0px 0px 10px" placeholder="음식점 이름, 메뉴 등을 검색하세요" aria-label="Search">
-        <button class="btn btn-outline-warning" type="submit" style="width:100px; border-radius: 0px 10px 10px 0px">검색</button>
-    </form>
-</div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-=======
             <img src="./image/mainImg.svg" class="d-block w-100" alt="첫번째">
         </div>
         <div class="carousel-item" id="second">

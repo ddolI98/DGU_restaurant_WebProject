@@ -10,15 +10,9 @@
     <link rel="icon" href="./img/favicon.png">
 </head>
 <body class="text-center">
-<<<<<<< Updated upstream
-<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #FAF1D6; z-index: 2;">
-    <div class="container-xxl d-flex align-items-md-center">
-        <a class="navbar-brand" href="index.jsp"><img src="./img/mainIcon.svg" class="rounded float-start" width="120"></a>
-=======
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #FAF1D6;">
     <div class="container-xxl d-flex align-items-md-center">
         <a class="navbar-brand" href="index.jsp"><image src="./image/mainIcon.svg" class="rounded float-start" width="120"></a>
->>>>>>> Stashed changes
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,11 +21,7 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="index.jsp">식당</a>
                 </li>
-<<<<<<< Updated upstream
-                <li class="nav-item dropdown ">
-=======
                 <li class="nav-item dropdown">
->>>>>>> Stashed changes
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         더보기
                     </a>
@@ -60,11 +50,6 @@
             } else {
             %>
             <ul class="navbar-nav d-flex">
-<<<<<<< Updated upstream
-                <a class="nav-link" aria-current="page" href="#">회원가입</a>
-                <a class="btn btn-outline-warning" href="login.jsp">로그인</a>
-            </ul>
-=======
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <%=userName %> 님
@@ -80,24 +65,11 @@
             <%
                 }
             %>
->>>>>>> Stashed changes
         </div>
     </div>
 </nav>
 <br><br><br><br><br><br><br><br><br><br><br>
 <section class="container" style="max-width:500px;">
-<<<<<<< Updated upstream
-<form method="post" action="loginAction.jsp">
-    <img src="./img/mainIcon.svg" class="rounded" width="250"><br><br>
-
-    <div class="form-floating">
-        <input type="ID" class="form-control" id="floatingInput" placeholder="name@example.com" style="border-bottom-color: #FFFFFF; border-radius: 5px 5px 0px 0px;">
-        <label for="floatingInput">ID</label>
-    </div>
-    <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" style="border-radius: 0px 0px 5px 5px;">
-        <label for="floatingPassword">Password</label>
-=======
 <form method="post" action="action/loginAction.jsp">
     <img src="./image/mainIcon.svg" class="rounded" width="250"><br><br>
 
@@ -108,7 +80,6 @@
     <div class="form-floating">
         <input type="password" class="form-control" name="password" id="password" placeholder="Password" style="border-radius: 0px 0px 5px 5px;">
         <label for="password">Password</label>
->>>>>>> Stashed changes
     </div><br>
     <button class="w-100 btn btn-lg btn" type="submit" style="background-color: #FAF1D6">로그인</button>
     <br><br>
