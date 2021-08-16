@@ -123,7 +123,7 @@
         <button class="nav-link" id="WesternTab" data-bs-toggle="tab" data-bs-target="#Western" type="button" role="tab" aria-controls="Western" aria-selected="false" style="color:#000000">&nbsp양식&nbsp</button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="BarTab" data-bs-toggle="tab" data-bs-target="#Bar" type="button" role="tab" aria-controls="Bar" aria-selected="false" style="color:#000000">&nbsp술집&nbsp</button>
+        <button class="nav-link" id="BarTab" data-bs-toggle="tab" data-bs-target="#Bar" type="button" role="tab" aria-controls="Bar" aria-selected="false" style="color:#000000">&nbsp주점&nbsp</button>
     </li>
     <li class="nav-item" role="presentation">
         <button class="nav-link" id="CoffeeTab" data-bs-toggle="tab" data-bs-target="#Coffee" type="button" role="tab" aria-controls="Coffee" aria-selected="false" style="color:#000000">&nbsp카페&nbsp</button>
@@ -394,7 +394,7 @@
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
                 <%
-                    SQL = "SELECT * FROM RESTAURANT WHERE category='술집'";
+                    SQL = "SELECT * FROM RESTAURANT WHERE category='주점'";
                     conn = null;
                     pstmt = null;
                     rs = null;
