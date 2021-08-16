@@ -18,7 +18,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #FAF1D6;">
     <div class="container-xxl d-flex align-items-md-center">
-        <a class="navbar-brand" href="index.jsp"><image src="./image/mainIcon.svg" class="rounded float-start" width="120"></a>
+        <a class="navbar-brand" href="index.jsp"><img src="./image/mainIcon.svg" class="rounded float-start" width="120"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -108,25 +108,25 @@
 </div><br><br>
 <ul class="nav nav-tabs container" id="nav-tab" role="tablist">
     <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="allTab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true" style="color:#000000">전체</button>
+        <button class="nav-link active" id="allTab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true" style="color:#000000">&nbsp전체&nbsp</button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="KoreanTab" data-bs-toggle="tab" data-bs-target="#Korean" type="button" role="tab" aria-controls="Korean" aria-selected="false" style="color:#000000">한식</button>
+        <button class="nav-link" id="KoreanTab" data-bs-toggle="tab" data-bs-target="#Korean" type="button" role="tab" aria-controls="Korean" aria-selected="false" style="color:#000000">&nbsp한식&nbsp</button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="ChineseTab" data-bs-toggle="tab" data-bs-target="#Chinese" type="button" role="tab" aria-controls="Chinese" aria-selected="false" style="color:#000000">중식</button>
+        <button class="nav-link" id="ChineseTab" data-bs-toggle="tab" data-bs-target="#Chinese" type="button" role="tab" aria-controls="Chinese" aria-selected="false" style="color:#000000">&nbsp중식&nbsp</button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="JapaneseTab" data-bs-toggle="tab" data-bs-target="#Japanese" type="button" role="tab" aria-controls="Japanese" aria-selected="false" style="color:#000000">일식</button>
+        <button class="nav-link" id="JapaneseTab" data-bs-toggle="tab" data-bs-target="#Japanese" type="button" role="tab" aria-controls="Japanese" aria-selected="false" style="color:#000000">&nbsp일식&nbsp</button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="WesternTab" data-bs-toggle="tab" data-bs-target="#Western" type="button" role="tab" aria-controls="Western" aria-selected="false" style="color:#000000">양식</button>
+        <button class="nav-link" id="WesternTab" data-bs-toggle="tab" data-bs-target="#Western" type="button" role="tab" aria-controls="Western" aria-selected="false" style="color:#000000">&nbsp양식&nbsp</button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="BarTab" data-bs-toggle="tab" data-bs-target="#Bar" type="button" role="tab" aria-controls="Bar" aria-selected="false" style="color:#000000">술집</button>
+        <button class="nav-link" id="BarTab" data-bs-toggle="tab" data-bs-target="#Bar" type="button" role="tab" aria-controls="Bar" aria-selected="false" style="color:#000000">&nbsp주점&nbsp</button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="CoffeeTab" data-bs-toggle="tab" data-bs-target="#Coffee" type="button" role="tab" aria-controls="Coffee" aria-selected="false" style="color:#000000">카페</button>
+        <button class="nav-link" id="CoffeeTab" data-bs-toggle="tab" data-bs-target="#Coffee" type="button" role="tab" aria-controls="Coffee" aria-selected="false" style="color:#000000">&nbsp카페&nbsp</button>
     </li>
 </ul><br>
 
@@ -156,7 +156,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="230"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -207,7 +207,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="230"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -258,7 +258,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="230"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -309,7 +309,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="230"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -360,7 +360,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="230"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -394,7 +394,7 @@
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
                 <%
-                    SQL = "SELECT * FROM RESTAURANT WHERE category='술집'";
+                    SQL = "SELECT * FROM RESTAURANT WHERE category='주점'";
                     conn = null;
                     pstmt = null;
                     rs = null;
@@ -411,7 +411,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="230"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -462,7 +462,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="210"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="230"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -501,6 +501,5 @@
 <script src="./js/jquery.min.js"></script>
 <script src="./js/popper.js"></script>
 <script src="./js/bootstrap.min.js"></script>
-
 </body>
 </html>
