@@ -18,8 +18,8 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #FAF1D6;">
-    <div class="container-xxl d-flex align-items-md-center">
-        <a class="navbar-brand" href="index.jsp"><img src="./img/mainIcon.svg" class="rounded float-start" width="120"></a>
+    <div class="container-xxl d-flex align-items-md-center" style="width:1200px">
+        <a class="navbar-brand" href="index.jsp"><img src="./image/mainIcon.svg" class="rounded float-start" width="120"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -33,29 +33,29 @@
                         더보기
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #FAF1D6;">
-                        <li><a class="dropdown-item" href="#">공지사항</a></li>
+                        <li><a class="dropdown-item" href="storeInfo.jsp">공지사항</a></li>
                         <li><a class="dropdown-item" href="#">이벤트</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">신고하기</a></li>
                     </ul>
                 </li>
             </ul>
-<%
-    String loginID = null;
-    String userName = null;
-    if(session.getAttribute("loginID") != null) {
-        loginID = (String) session.getAttribute("loginID");
-        userName = (String) session.getAttribute("userName");
-    }
-    if(loginID == null) {
-%>
+            <%
+                String loginID = null;
+                String userName = null;
+                if(session.getAttribute("loginID") != null) {
+                    loginID = (String) session.getAttribute("loginID");
+                    userName = (String) session.getAttribute("userName");
+                }
+                if(loginID == null) {
+            %>
             <ul class="navbar-nav d-flex">
                 <a class="nav-link" aria-current="page" href="signUp.jsp">회원가입</a>
                 <a class="btn btn-outline-warning" href="login.jsp" style="border-color: #FFD6AA; color: #FFD6AA">로그인</a>
             </ul>
-<%
-    } else {
-%>
+            <%
+            } else {
+            %>
             <ul class="navbar-nav d-flex">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -69,9 +69,9 @@
                     </ul>
                 </li>
             </ul>
-<%
-    }
-%>
+            <%
+                }
+            %>
         </div>
     </div>
 </nav>
@@ -127,7 +127,7 @@
     similarInfo = storedao.getStoreSimilar(category, latitude, longitude);
 
 %>
-<div id="mainSlide" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:50%; margin: auto; display: flex; margin-bottom:40px; margin-top: 100px; border-radius:100px">
+<div id="mainSlide" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:1000px; height:600px; margin: auto; display: flex; margin-bottom:40px; margin-top: 100px;">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#mainSlide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#mainSlide" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -166,35 +166,35 @@
     </svg>
     <h4 style="display:inline"><%=avgScore %></h4><br>
 </div><br><br>
-<h6 style="text-align:center;"><strong><%=explane %></strong></h6><br><br>
+<h5 style="text-align: center"><%=explane %></h5><br><br>
 
-
+<section class="container" style="max-width:1000px;">
 <div class="container">
     <div class="row">
         <div class="col-8" >
-            <div style="padding-left: 30%; margin-top: 30px;">
-                분류 : <%=category %><br><br>
-                전화번호: <%=phoneNumber %><br><br>
-                주소: <%=address %><br><br>
+            <div style="margin-top: 30px;">
+                <h5><strong>분류</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=category %></h5><br>
+                <h5><strong>전화번호</strong>&nbsp;&nbsp;&nbsp;<%=phoneNumber %></h5><br>
+                <h5><strong>주소</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=address %></h5><br>
                 <%
                     if(startHours != null) {
                 %>
-                영업 시간: <%=startHours %> 부터 <%=endHours %><br><br>
+                <h5><strong>영업시간</strong>&nbsp;&nbsp;&nbsp;<%=startHours %>부터 <%=endHours %></h5><br>
                 <%
                     }
                 %>
                 <%
                     if(holiday != null) {
                 %>
-                휴무: <%=holiday %><br><br>
+                <h5><strong>휴무</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=holiday %></h5><br>
                 <%
                     }
                 %>
             </div>
 
         </div>
-        <div class="col-4" style="float:right;">
-            <div id="map" style="height:270px;">
+        <div class="col-4">
+            <div id="map" style="width:100%; height:270px;">
                 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cb6da4e816f1b380f9f5043c839fdeeb"></script>
                 <script>
                     var mapContainer = document.getElementById('map'), // 지도를 표시할 div
@@ -232,8 +232,9 @@
 <div class = "container">
     <div class="row">
         <div class="col-8">
-            <div style="padding-left: 30%; margin-top: 50px;">
-                <h2 style="font-size: 30px; margin-top: 50px;"><strong>리뷰(<%=review.size()%>)</strong></h2>
+            <div style="margin-top: 50px;">
+                <h3 style="font-size: 30px; margin-top: 50px;"><strong>리뷰(<%=review.size()%>)</strong></h3>
+                <hr class="my-4">
                 <%
                     for(String[] reviewValue : review){
                         String nickname = null;
@@ -256,7 +257,7 @@
             </div>
         </div>
         <div class="col-4">
-            <br><h5><strong><%=storeName %></strong>와(과) 유사한 주변 음식점</h5><br>
+            <br><h5 style="text-align:center"><strong><%=storeName %></strong>와(과) 유사한 주변 음식점</h5><br>
 
             <%
                 for(String[] infoValue : similarInfo){
@@ -277,7 +278,7 @@
                     <h4 class="card-text"><%= name %></h4>
                     <div class="text-end">
                         <img src="./image/star.svg" style="width:15px">
-                        <small class="text-muted"><%=score%></small>
+                        <small class="text-muted"><strong><%=score%></strong></small>
                     </div>
                 </div>
                 <div style="margin-top:10px;margin-bottom: 10px">
@@ -290,6 +291,7 @@
         </div>
     </div>
 </div>
+</section>
 
 
 <br><br>

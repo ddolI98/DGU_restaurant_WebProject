@@ -17,7 +17,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #FAF1D6;">
-    <div class="container-xxl d-flex align-items-md-center">
+    <div class="container-xxl d-flex align-items-md-center" style="width:1200px">
         <a class="navbar-brand" href="index.jsp"><img src="./image/mainIcon.svg" class="rounded float-start" width="120"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,22 +39,22 @@
                     </ul>
                 </li>
             </ul>
-<%
-    String loginID = null;
-    String userName = null;
-    if(session.getAttribute("loginID") != null) {
-        loginID = (String) session.getAttribute("loginID");
-        userName = (String) session.getAttribute("userName");
-    }
-    if(loginID == null) {
-%>
+            <%
+                String loginID = null;
+                String userName = null;
+                if(session.getAttribute("loginID") != null) {
+                    loginID = (String) session.getAttribute("loginID");
+                    userName = (String) session.getAttribute("userName");
+                }
+                if(loginID == null) {
+            %>
             <ul class="navbar-nav d-flex">
                 <a class="nav-link" aria-current="page" href="signUp.jsp">회원가입</a>
                 <a class="btn btn-outline-warning" href="login.jsp" style="border-color: #FFD6AA; color: #FFD6AA">로그인</a>
             </ul>
-<%
-    } else {
-%>
+            <%
+            } else {
+            %>
             <ul class="navbar-nav d-flex">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -68,13 +68,13 @@
                     </ul>
                 </li>
             </ul>
-<%
-    }
-%>
+            <%
+                }
+            %>
         </div>
     </div>
 </nav>
-<div id="mainSlide" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:70%; margin: auto; display: flex; margin-bottom:40px; margin-top: 100px; border-radius:100px">
+<div id="mainSlide" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:60%; margin: auto; display: flex; margin-bottom:40px; margin-top: 100px; border-radius:100px">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#mainSlide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#mainSlide" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -106,7 +106,7 @@
         <button class="btn btn-outline-warning" type="submit" style="width:100px; border-radius: 0px 10px 10px 0px">검색</button>
     </form>
 </div><br><br>
-<ul class="nav nav-tabs container" id="nav-tab" role="tablist">
+<ul class="nav nav-tabs container" id="nav-tab" role="tablist" style="width:1200px">
     <li class="nav-item" role="presentation">
         <button class="nav-link active" id="allTab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true" style="color:#000000">&nbsp전체&nbsp</button>
     </li>
@@ -130,7 +130,7 @@
     </li>
 </ul><br>
 
-<div class="tab-content" id="nav-tabContent">
+<div class="tab-content" id="nav-tabContent" style="width:1200px; margin:auto">
     <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="allTab">
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
@@ -156,7 +156,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="230"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="200"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -207,7 +207,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="230"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="200"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -258,7 +258,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="230"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="200"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -309,7 +309,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="230"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="200"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -360,7 +360,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="230"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="200"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -411,7 +411,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="230"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="200"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
@@ -462,7 +462,7 @@
                             mainImg = rs.getString(5);
                 %>
                 <div class="col">
-                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="230"></a>
+                    <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="200"></a>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="card-text"><%= name %></h4>
