@@ -11,10 +11,9 @@ import java.util.List;
 
 public class reviewDAO {
 
-    public static List<String[]> getStoreReview(Integer restID) {
+    public static ArrayList<String[]> getStoreReview(Integer restID) {
         String SQL = "SELECT userID, contents, score FROM REVIEW WHERE restID = ?";
-        List<String[]> review = new ArrayList<String[]>();
-        String[] reviewValue = new String[3];
+        ArrayList<String[]> review = new ArrayList<String[]>();
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -24,6 +23,7 @@ public class reviewDAO {
             pstmt.setInt(1, restID);
             rs = pstmt.executeQuery();
             while(rs.next()) {
+                String[] reviewValue = new String[3];
                 reviewValue[0] = rs.getString(1);
                 reviewValue[1] = rs.getString(2);
                 reviewValue[2] = rs.getString(3);

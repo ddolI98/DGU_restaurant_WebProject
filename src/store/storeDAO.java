@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class storeDAO {
 
@@ -38,7 +39,7 @@ public class storeDAO {
     }
 
     public static String[] getStoreImg(Integer restID) {
-        String SQL = "SELECT Img_1, Img_2, Img_3 FROM RESTAURANT WHERE restID = ?";
+        String SQL = "SELECT Img_1, Img_2, Img_3 FROM RESTAURANT WHERE serialNum = ?";
         String[] storeImg = new String[3];
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -78,6 +79,38 @@ public class storeDAO {
             e.printStackTrace();
         }
         return mapInfo;
+    }
+
+    public static ArrayList<String[]> getStoreSimilar(String category, BigDecimal latitude, BigDecimal longitude) {
+        String SQL = "SELECT * FROM RESTAURANT " +
+        "WHERE category = ? and " +
+        "(6371*acos(cos(radians(?))*cos(radians(latitude))*cos(radians(longitude)-radians(?))+sin(radians(?))*sin(radians(latitude)))) <= 1";
+        ArrayList<String[]> info = new ArrayList<String[]>();
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            conn = databaseUtil.getConnection();
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, category);
+            pstmt.setBigDecimal(2, latitude);
+            pstmt.setBigDecimal(3, longitude);
+            pstmt.setBigDecimal(4, latitude);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                String[] infoValue = new String[5];
+                infoValue[0] = rs.getString(1); // serialNum
+                infoValue[1] = rs.getString(2); // name
+                infoValue[2] = rs.getString(3); // explane
+                infoValue[3] = rs.getString(5); // mainImg
+                infoValue[4] = rs.getString(15); // score
+
+                info.add(infoValue);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return info;
     }
 
 }
