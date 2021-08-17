@@ -28,7 +28,7 @@
                         더보기
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #FAF1D6;">
-                        <li><a class="dropdown-item" href="#">공지사항</a></li>
+                        <li><a class="dropdown-item" href="storeInfo.jsp">공지사항</a></li>
                         <li><a class="dropdown-item" href="#">이벤트</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">신고하기</a></li>

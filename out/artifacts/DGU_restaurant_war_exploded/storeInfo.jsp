@@ -125,6 +125,7 @@
     BigDecimal[] mapInfo = storedao.getStoreMap(restID);
 
     List<String[]> review = reviewDAO.getStoreReview(restID);
+    String[] reviewValue = new String[3];
 
     storeName = storeInfo[0];
     explane = storeInfo[1];
@@ -166,7 +167,6 @@
     </div>
 
     <div>
-        <%=review.toString()%>
     </div>
 </div>
 
