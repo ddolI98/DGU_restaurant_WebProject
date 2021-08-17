@@ -114,24 +114,4 @@ public class userDAO {
         return false;
     }
 
-    public static String getNickName(Integer userID) {
-        String SQL = "SELECT nickName FROM USER WHERE userID = ?";
-        Connection conn = null;
-        String nickname = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
-        try {
-            conn = databaseUtil.getConnection();
-            pstmt = conn.prepareStatement(SQL);
-            pstmt.setInt(1, userID);
-            rs = pstmt.executeQuery();
-            if(rs.next()) {
-                nickname = rs.getString(1);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return nickname;
-    }
-
 }
