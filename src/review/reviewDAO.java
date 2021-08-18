@@ -35,4 +35,21 @@ public class reviewDAO {
         return review;
     }
 
+    public static int review(String restID, String userID, String contents, String score) {
+        String SQL = "INSERT INTO REVIEW(restID, userID, contents, score) VALUES(?, ?, ?, ?)";
+
+        try {
+            Connection conn = databaseUtil.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, restID);
+            pstmt.setString(2, userID);
+            pstmt.setString(3, contents);
+            pstmt.setString(4, score);
+            return pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
 }
