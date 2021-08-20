@@ -48,4 +48,24 @@ public class reviewDAO {
         return -1;
     }
 
+    public static String avgScore(int restID) {
+        String SQL = "SELECT ROUND(AVG(SCORE), 1) FROM REVIEW WHERE restID = ?";
+        String avgScore = null;
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            conn = databaseUtil.getConnection();
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setInt(1, restID);
+            rs = pstmt.executeQuery();
+            if(rs.next()) {
+                avgScore = rs.getString(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return avgScore;
+    }
+
 }

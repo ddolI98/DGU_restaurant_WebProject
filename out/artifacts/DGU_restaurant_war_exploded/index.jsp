@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="user.userDAO"%>
+<%@ page import="review.reviewDAO"%>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.ResultSet" %>
@@ -162,7 +163,19 @@
                             <h4 class="card-text"><%= name %></h4>
                             <div class="text-end">
                                 <img src="./image/star.svg" style="width:15px">
-                                <small class="text-muted">별점</small>
+                                <%
+                                    reviewDAO reviewdao = new reviewDAO();
+                                    String avgScore = reviewdao.avgScore(serialNum);
+                                    if (avgScore == null) {
+                                %>
+                                <small class="text-muted">X</small>
+                                <%
+                                } else {
+                                %>
+                                <small class="text-muted"><%=avgScore%></small>
+                                <%
+                                    }
+                                %>
                             </div>
                         </div>
                         <div style="margin-top:10px;margin-bottom: 10px">
@@ -213,7 +226,19 @@
                             <h4 class="card-text"><%= name %></h4>
                             <div class="text-end">
                                 <img src="./image/star.svg" style="width:15px">
-                                <small class="text-muted">별점</small>
+                                <%
+                                    reviewDAO reviewdao = new reviewDAO();
+                                    String avgScore = reviewdao.avgScore(serialNum);
+                                    if (avgScore == null) {
+                                %>
+                                <small class="text-muted">X</small>
+                                <%
+                                } else {
+                                %>
+                                <small class="text-muted"><%=avgScore%></small>
+                                <%
+                                    }
+                                %>
                             </div>
                         </div>
                         <div style="margin-top:10px;margin-bottom: 10px">
@@ -264,7 +289,19 @@
                             <h4 class="card-text"><%= name %></h4>
                             <div class="text-end">
                                 <img src="./image/star.svg" style="width:15px">
-                                <small class="text-muted">별점</small>
+                                <%
+                                    reviewDAO reviewdao = new reviewDAO();
+                                    String avgScore = reviewdao.avgScore(serialNum);
+                                    if (avgScore == null) {
+                                %>
+                                <small class="text-muted">X</small>
+                                <%
+                                } else {
+                                %>
+                                <small class="text-muted"><%=avgScore%></small>
+                                <%
+                                    }
+                                %>
                             </div>
                         </div>
                         <div style="margin-top:10px;margin-bottom: 10px">
@@ -315,7 +352,19 @@
                             <h4 class="card-text"><%= name %></h4>
                             <div class="text-end">
                                 <img src="./image/star.svg" style="width:15px">
-                                <small class="text-muted">별점</small>
+                                <%
+                                    reviewDAO reviewdao = new reviewDAO();
+                                    String avgScore = reviewdao.avgScore(serialNum);
+                                    if (avgScore == null) {
+                                %>
+                                <small class="text-muted">X</small>
+                                <%
+                                    } else {
+                                %>
+                                <small class="text-muted"><%=avgScore%></small>
+                                <%
+                                    }
+                                %>
                             </div>
                         </div>
                         <div style="margin-top:10px;margin-bottom: 10px">
@@ -366,7 +415,19 @@
                             <h4 class="card-text"><%= name %></h4>
                             <div class="text-end">
                                 <img src="./image/star.svg" style="width:15px">
-                                <small class="text-muted">별점</small>
+                                <%
+                                    reviewDAO reviewdao = new reviewDAO();
+                                    String avgScore = reviewdao.avgScore(serialNum);
+                                    if (avgScore == null) {
+                                %>
+                                <small class="text-muted">X</small>
+                                <%
+                                } else {
+                                %>
+                                <small class="text-muted"><%=avgScore%></small>
+                                <%
+                                    }
+                                %>
                             </div>
                         </div>
                         <div style="margin-top:10px;margin-bottom: 10px">
@@ -417,7 +478,19 @@
                             <h4 class="card-text"><%= name %></h4>
                             <div class="text-end">
                                 <img src="./image/star.svg" style="width:15px">
-                                <small class="text-muted">별점</small>
+                                <%
+                                    reviewDAO reviewdao = new reviewDAO();
+                                    String avgScore = reviewdao.avgScore(serialNum);
+                                    if (avgScore == null) {
+                                %>
+                                <small class="text-muted">X</small>
+                                <%
+                                } else {
+                                %>
+                                <small class="text-muted"><%=avgScore%></small>
+                                <%
+                                    }
+                                %>
                             </div>
                         </div>
                         <div style="margin-top:10px;margin-bottom: 10px">
@@ -468,7 +541,19 @@
                             <h4 class="card-text"><%= name %></h4>
                             <div class="text-end">
                                 <img src="./image/star.svg" style="width:15px">
-                                <small class="text-muted">별점</small>
+                                <%
+                                    reviewDAO reviewdao = new reviewDAO();
+                                    String avgScore = reviewdao.avgScore(serialNum);
+                                    if (avgScore == null) {
+                                %>
+                                <small class="text-muted">X</small>
+                                <%
+                                } else {
+                                %>
+                                <small class="text-muted"><%=avgScore%></small>
+                                <%
+                                    }
+                                %>
                             </div>
                         </div>
                         <div style="margin-top:10px;margin-bottom: 10px">
