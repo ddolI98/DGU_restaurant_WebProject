@@ -7,7 +7,7 @@
     <title>맛동국</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/custom.css">
-    <link rel="icon" href="./img/favicon.png">
+    <link rel="icon" href="./image/favicon.png">
     <script type="text/javascript">
         function openCheckID(){
             window.name = "parentForm";

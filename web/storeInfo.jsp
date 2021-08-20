@@ -14,7 +14,7 @@
     <title>맛동국</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/custom.css">
-    <link rel="icon" href="./img/favicon.png">
+    <link rel="icon" href="./image/favicon.png">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #FAF1D6;">
@@ -127,7 +127,7 @@
     similarInfo = storedao.getStoreSimilar(category, latitude, longitude);
 
 %>
-<div id="mainSlide" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:1000px; height:600px; margin: auto; display: flex; margin-bottom:40px; margin-top: 100px;">
+<div id="mainSlide" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:1100px; height:650px; margin: auto; display: flex; margin-bottom:40px; margin-top: 100px;">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#mainSlide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#mainSlide" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -168,8 +168,8 @@
 </div><br><br>
 <h5 style="text-align: center"><%=explane %></h5><br><br>
 
-<section class="container" style="max-width:1000px;">
-<div class="container">
+<section class="container" style="max-width:1200px;">
+<div class="container justify-content-between align-items-center">
     <div class="row">
         <div class="col-8" >
             <div style="margin-top: 30px;">
@@ -191,9 +191,9 @@
                     }
                 %>
             </div>
-
         </div>
-        <div class="col-4">
+        <div class="col-1"></div>
+        <div class="col-3">
             <div id="map" style="width:100%; height:270px;">
                 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cb6da4e816f1b380f9f5043c839fdeeb"></script>
                 <script>
@@ -293,29 +293,27 @@
                     String nickname = null;
                     nickname = userDAO.getNickName(Integer.parseInt(reviewValue[0]));
             %>
-            <div class="card bg-light mt-3">
+            <div class="card bg-light mt-3" style="margin-bottom: 30px">
                 <div class="card-header bg-light">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <p><strong><%=nickname%></strong></p>
-                        <div>
+                    <div class="row">
+                        <div class="col-9 text-left"><strong><%=nickname%></strong></div>
+                        <div class="col-3 text-end">
                             <img src="./image/star.svg" style="width:15px">
                             <strong><%= reviewValue[2]%></strong>
                         </div>
                     </div>
-                    <hr class="my-4">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <%=reviewValue[1]%>
-                        </h5>
-                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><%=reviewValue[1]%></h5>
                 </div>
             </div>
             <%
                 }
             %>
         </div>
-        <div class="col-4">
-            <br><h5 style="text-align:center"><strong><%=storeName %></strong>와(과) 유사한 주변 음식점</h5><br>
+        <div class="col-1"></div>
+        <div class="col-3">
+            <br><h5 style="text-align:center"><strong><%=storeName %></strong>와(과)<br>유사한 주변 음식점</h5><br>
 
             <%
                 for(String[] infoValue : similarInfo){
@@ -330,7 +328,7 @@
                     mainImg = infoValue[3];
                     score = infoValue[4];
             %>
-            <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="230"></a>
+            <a href="storeInfo.jsp?serialNum=<%= serialNum%>"><img src="<%= mainImg%>" width="100%" height="200"></a>
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <h4 class="card-text"><%= name %></h4>

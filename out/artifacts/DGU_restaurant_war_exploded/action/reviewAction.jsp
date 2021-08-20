@@ -23,6 +23,7 @@
     }
     reviewDAO reviewdao = new reviewDAO();
     int result = reviewdao.review(restID, userID, contents, score);
+    System.out.println(result);
     if(result == 1) {
         PrintWriter script = response.getWriter();
         script.println("<script>");

@@ -7,7 +7,7 @@
     <title>맛동국</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/custom.css">
-    <link rel="icon" href="./img/favicon.png">
+    <link rel="icon" href="./image/favicon.png">
 </head>
 <body class="text-center">
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #FAF1D6;">
