@@ -28,7 +28,7 @@
         PrintWriter script = response.getWriter();
         script.println("<script>");
         script.println("alert('리뷰가 작성되었습니다.');");
-        script.println("history.back();");
+        script.println("location.href='./../storeInfo.jsp?serialNum=" + restID + "'");
         script.println("</script>");
         script.close();
         return;

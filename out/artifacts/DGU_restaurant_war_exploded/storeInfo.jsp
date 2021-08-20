@@ -226,24 +226,19 @@
             <br><br>
             <%
                 String userID = null;
-                if(session.getAttribute("loginID") != null) {
-                    userID = (String) session.getAttribute("userID");
-                }
                 if(loginID == null) {
             %>
             <button class="w-100 btn btn-lg btn" type="button" onclick="location.href='login.jsp'" style="background-color: #faf1d6">리뷰 쓰기</button>
             <%
                 } else {
+                    userID = (String) session.getAttribute("userID");
             %>
             <button class="w-100 btn btn-lg btn" type="button"  data-bs-toggle="modal" data-bs-target="#wrtReview"  style="background-color: #faf1d6">리뷰 쓰기</button>
-            <%
-                }
-            %>
 
             <div class="modal fade" id="wrtReview" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
-                        <form method="post" action="./action/reviewAction.jsp">
+                        <form method="post" action="action/reviewAction.jsp">
                             <div class="modal-header">
                                 <h4 class="modal-title" id="exampleModalLabel">리뷰 쓰기</h4>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -279,6 +274,9 @@
                     </div>
                 </div>
             </div>
+            <%
+                }
+            %>
         </div>
     </div>
 </div>

@@ -35,8 +35,8 @@ public class userDAO {
     }
 
     public static String[] getInfo(String loginID) {
-        String SQL = "SELECT userName, nickname, mailAddress, userAge, phoneNumber, userAddress FROM USER WHERE loginID = ?";
-        String[] info = new String[6];
+        String SQL = "SELECT userID, userName, nickname, mailAddress, userAge, phoneNumber, userAddress FROM USER WHERE loginID = ?";
+        String[] info = new String[7];
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -52,6 +52,7 @@ public class userDAO {
                 info[3] = rs.getString(4);
                 info[4] = rs.getString(5);
                 info[5] = rs.getString(6);
+                info[6] = rs.getString(7);
             }
         } catch (Exception e) {
             e.printStackTrace();
