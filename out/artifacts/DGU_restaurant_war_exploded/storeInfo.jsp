@@ -312,7 +312,6 @@
                             <a onclick="return confirm('추천을 취소하시겠습니까?')" href="action/delRcmdAction.jsp?reviewID=">삭제</a>
                         </div>
                     </div>
-
                 </div>
             </div>
             <%
@@ -342,7 +341,18 @@
                     <h4 class="card-text"><%= name %></h4>
                     <div class="text-end">
                         <img src="./image/star.svg" style="width:15px">
-                        <small class="text-muted"><strong><%=score%></strong></small>
+                        <%
+                            avgScore = reviewdao.avgScore(serialNum);
+                            if (avgScore == null) {
+                        %>
+                        <small class="text-muted"><strong>X</strong></small>
+                        <%
+                        } else {
+                        %>
+                        <small class="text-muted"><strong><%=avgScore %></strong></small>
+                        <%
+                            }
+                        %>
                     </div>
                 </div>
                 <div style="margin-top:10px;margin-bottom: 10px">
