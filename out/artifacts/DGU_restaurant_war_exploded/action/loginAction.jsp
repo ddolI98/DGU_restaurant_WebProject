@@ -30,12 +30,13 @@
         script.println("</script>");
         script.close();
 
-        session.setAttribute("userName", info[0]);
-        session.setAttribute("nickname", info[1]);
-        session.setAttribute("mailAddress", info[2]);
-        session.setAttribute("userAge", info[3]);
-        session.setAttribute("phoneNumber", info[4]);
-        session.setAttribute("userAddress", info[5]);
+        session.setAttribute("userID", info[0]);
+        session.setAttribute("userName", info[1]);
+        session.setAttribute("nickname", info[2]);
+        session.setAttribute("mailAddress", info[3]);
+        session.setAttribute("userAge", info[4]);
+        session.setAttribute("phoneNumber", info[5]);
+        session.setAttribute("userAddress", info[6]);
 
         return;
     } else if (result == 0) {

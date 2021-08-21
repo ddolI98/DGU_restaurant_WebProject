@@ -1,10 +1,9 @@
-@import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
 @import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 .navbar-brand, h1, h2, h3, h4 {
-    font-family: 'Jeju Gothic';
+    font-family: 'Nanum Gothic';
 }
 h5 {
-    font-family: 'Jeju Gothic';
+    font-family: 'Nanum Gothic';
     font-size: 18px;
 }
 body {
