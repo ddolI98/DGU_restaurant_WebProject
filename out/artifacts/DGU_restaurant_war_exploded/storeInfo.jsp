@@ -123,7 +123,7 @@
     ArrayList<String[]> similarInfo = null;
 
 
-    similarInfo = storedao.getStoreSimilar(category, latitude, longitude);
+    similarInfo = storedao.getStoreSimilar(storeName, category, latitude, longitude);
 
 %>
 <div id="mainSlide" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:1100px; height:650px; margin: auto; display: flex; margin-bottom:40px; margin-top: 100px;">
