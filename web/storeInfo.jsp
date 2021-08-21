@@ -62,7 +62,7 @@
                         <%=userName %> 님
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #FAF1D6;">
-                        <li><a class="dropdown-item" href="#">마이페이지</a></li>
+                        <li><a class="dropdown-item" href="myPage.jsp">마이페이지</a></li>
                         <li><a class="dropdown-item" href="#">1:1 문의</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="logout.jsp">로그아웃</a></li>
@@ -345,7 +345,7 @@
                             avgScore = reviewdao.avgScore(serialNum);
                             if (avgScore == null) {
                         %>
-                        <small class="text-muted"><strong>X</strong></small>
+                        <small class="text-muted"><strong>--</strong></small>
                         <%
                         } else {
                         %>
