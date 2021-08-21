@@ -248,44 +248,19 @@
                             </div>
                             <div class="modal-body">
                                 <div class="mb-3 d-flex">
-                                    <div class="startRadio">
-                                        <label class="startRadio__box">
-                                            <input type="radio" name="score" id="score_1">
-                                            <span class="startRadio__img"><span class="blind">별 1개</span></span>
-                                        </label>
-                                        <label class="startRadio__box">
-                                            <input type="radio" name="score" id="score_1.5">
-                                            <span class="startRadio__img"><span class="blind">별 1.5개</span></span>
-                                        </label>
-                                        <label class="startRadio__box">
-                                            <input type="radio" name="score" id="score_2">
-                                            <span class="startRadio__img"><span class="blind">별 2개</span></span>
-                                        </label>
-                                        <label class="startRadio__box">
-                                            <input type="radio" name="score" id="score_2.5">
-                                            <span class="startRadio__img"><span class="blind">별 2.5개</span></span>
-                                        </label>
-                                        <label class="startRadio__box">
-                                            <input type="radio" name="score" id="score_3.0">
-                                            <span class="startRadio__img"><span class="blind">별 3개</span></span>
-                                        </label>
-                                        <label class="startRadio__box">
-                                            <input type="radio" name="score" id="score_3.5">
-                                            <span class="startRadio__img"><span class="blind">별 3.5개</span></span>
-                                        </label>
-                                        <label class="startRadio__box">
-                                            <input type="radio" name="score" id="score_4">
-                                            <span class="startRadio__img"><span class="blind">별 4개</span></span>
-                                        </label>
-                                        <label class="startRadio__box">
-                                            <input type="radio" name="score" id="score_4.5">
-                                            <span class="startRadio__img"><span class="blind">별 4.5개</span></span>
-                                        </label>
-                                        <label class="startRadio__box">
-                                            <input type="radio" name="score" id="score_5.0">
-                                            <span class="startRadio__img"><span class="blind">별 5개</span></span>
-                                        </label>
-                                    </div>
+                                    <label for="score" class="col-form-label col-md-3">별점</label>
+                                    <select class="form-select col-md-9 ms-auto" name="score" id="score" style="width:350px" required>
+                                        <option>선택</option>
+                                        <option>1.0</option>
+                                        <option>1.5</option>
+                                        <option>2.0</option>
+                                        <option>2.5</option>
+                                        <option>3.0</option>
+                                        <option>3.5</option>
+                                        <option>4.0</option>
+                                        <option>4.5</option>
+                                        <option>5.0</option>
+                                    </select>
                                 </div>
                                 <div class="mb-3 d-flex">
                                     <input type="hidden" name="userID" value="<%=userID%>" id="userID">
