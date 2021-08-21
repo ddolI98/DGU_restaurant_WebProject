@@ -114,7 +114,7 @@ public class reviewDAO {
     }
 
     public static int deleteReview(String reviewID) {
-        String SQL = "DELETE TABLE FROM REVIEW WHERE reviewID = ?";
+        String SQL = "DELETE FROM REVIEW WHERE reviewID = ?";
 
         try {
             Connection conn = databaseUtil.getConnection();
