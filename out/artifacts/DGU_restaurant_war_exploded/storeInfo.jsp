@@ -62,7 +62,7 @@
                         <%=userName %> 님
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #FAF1D6;">
-                        <li><a class="dropdown-item" href="#">마이페이지</a></li>
+                        <li><a class="dropdown-item" href="myPage.jsp">마이페이지</a></li>
                         <li><a class="dropdown-item" href="#">1:1 문의</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="logout.jsp">로그아웃</a></li>
@@ -367,7 +367,18 @@
                         <h4 class="card-text"><%= name %></h4>
                         <div class="text-end">
                             <img src="./image/star.svg" style="width:15px">
-                            <small class="text-muted"><strong><%=score%></strong></small>
+                            <%
+                                avgScore = reviewdao.avgScore(serialNum);
+                                if (avgScore == null) {
+                            %>
+                            <small class="text-muted">--</small>
+                            <%
+                            } else {
+                            %>
+                            <small class="text-muted"><%=avgScore%></small>
+                            <%
+                                }
+                            %>
                         </div>
                     </div>
                     <div style="margin-top:10px;margin-bottom: 10px">
@@ -381,8 +392,6 @@
         </div>
     </div>
 </section>
-
-
 <br><br>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
     전화번호 : 010-9564-3580<br>

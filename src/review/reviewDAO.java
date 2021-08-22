@@ -70,6 +70,65 @@ public class reviewDAO {
         return avgScore;
     }
 
+    public static ArrayList<String[]> myReview(String userID) {
+        String SQL = "SELECT restID, contents, score, reviewID FROM REVIEW WHERE userID = ?";
+        ArrayList<String[]> review = new ArrayList<String[]>();
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            conn = databaseUtil.getConnection();
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, userID);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                String[] reviewValue = new String[4];
+                reviewValue[0] = rs.getString(1);
+                reviewValue[1] = rs.getString(2);
+                reviewValue[2] = rs.getString(3);
+                reviewValue[3] = rs.getString(4);
+                review.add(reviewValue);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return review;
+    }
+
+    public static String getRestName(String restID) {
+        String SQL = "SELECT name FROM RESTAURANT WHERE serialNum = ?";
+        Connection conn = null;
+        String name = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            conn = databaseUtil.getConnection();
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, restID);
+            rs = pstmt.executeQuery();
+            if(rs.next()) {
+                name = rs.getString(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return name;
+    }
+
+    public static int deleteReview(String reviewID) {
+        String SQL = "DELETE FROM REVIEW WHERE reviewID = ?";
+
+        try {
+            Connection conn = databaseUtil.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, reviewID);
+            return pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
     public static boolean ifReviewed(String userID, String reviewID) {
         String SQL = "SELECT reviewRecommendID FROM REVIEWRECOMMEND WHERE userID = ? and reviewID = ?";
         Connection conn = null;
