@@ -168,7 +168,7 @@
                                     String avgScore = reviewdao.avgScore(serialNum);
                                     if (avgScore == null) {
                                 %>
-                                <small class="text-muted">X</small>
+                                <small class="text-muted">--</small>
                                 <%
                                 } else {
                                 %>
@@ -231,7 +231,7 @@
                                     String avgScore = reviewdao.avgScore(serialNum);
                                     if (avgScore == null) {
                                 %>
-                                <small class="text-muted">X</small>
+                                <small class="text-muted">--</small>
                                 <%
                                 } else {
                                 %>
@@ -294,7 +294,7 @@
                                     String avgScore = reviewdao.avgScore(serialNum);
                                     if (avgScore == null) {
                                 %>
-                                <small class="text-muted">X</small>
+                                <small class="text-muted">--</small>
                                 <%
                                 } else {
                                 %>
@@ -357,7 +357,7 @@
                                     String avgScore = reviewdao.avgScore(serialNum);
                                     if (avgScore == null) {
                                 %>
-                                <small class="text-muted">X</small>
+                                <small class="text-muted">--</small>
                                 <%
                                     } else {
                                 %>
@@ -420,7 +420,7 @@
                                     String avgScore = reviewdao.avgScore(serialNum);
                                     if (avgScore == null) {
                                 %>
-                                <small class="text-muted">X</small>
+                                <small class="text-muted">--</small>
                                 <%
                                 } else {
                                 %>
@@ -483,7 +483,7 @@
                                     String avgScore = reviewdao.avgScore(serialNum);
                                     if (avgScore == null) {
                                 %>
-                                <small class="text-muted">X</small>
+                                <small class="text-muted">--</small>
                                 <%
                                 } else {
                                 %>
@@ -546,7 +546,7 @@
                                     String avgScore = reviewdao.avgScore(serialNum);
                                     if (avgScore == null) {
                                 %>
-                                <small class="text-muted">X</small>
+                                <small class="text-muted">--</small>
                                 <%
                                 } else {
                                 %>
