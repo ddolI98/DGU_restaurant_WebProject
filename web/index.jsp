@@ -102,8 +102,8 @@
     </button>
 </div>
 <div class="container-xxl" style="width:550px; margin: auto;">
-    <form class="d-flex">
-        <input class="form-control" type="search" style="width:450px; border-right: #FFD6AA; border-radius: 10px 0px 0px 10px" placeholder="음식점 이름, 메뉴 등을 검색하세요" aria-label="Search">
+    <form class="d-flex" method="get" action="search.jsp">
+        <input class="form-control" type="search" style="width:450px; border-right: #FFD6AA; border-radius: 10px 0px 0px 10px" placeholder="음식점 이름을 검색하세요" aria-label="Search" name="searchWord">
         <button class="btn btn-outline-warning" type="submit" style="width:100px; border-radius: 0px 10px 10px 0px">검색</button>
     </form>
 </div><br><br>
