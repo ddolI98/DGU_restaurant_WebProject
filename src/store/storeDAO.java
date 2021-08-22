@@ -81,10 +81,11 @@ public class storeDAO {
         return mapInfo;
     }
 
-    public static ArrayList<String[]> getStoreSimilar(String category, BigDecimal latitude, BigDecimal longitude) {
+    public static ArrayList<String[]> getStoreSimilar(String storeName, String category, BigDecimal latitude, BigDecimal longitude) {
         String SQL = "SELECT * FROM RESTAURANT " +
         "WHERE category = ? and " +
-        "(6371*acos(cos(radians(?))*cos(radians(latitude))*cos(radians(longitude)-radians(?))+sin(radians(?))*sin(radians(latitude)))) <= 1";
+        "(6371*acos(cos(radians(?))*cos(radians(latitude))*cos(radians(longitude)-radians(?))+sin(radians(?))*sin(radians(latitude)))) <= 1 and " +
+        "name <> ?";
         ArrayList<String[]> info = new ArrayList<String[]>();
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -96,6 +97,7 @@ public class storeDAO {
             pstmt.setBigDecimal(2, latitude);
             pstmt.setBigDecimal(3, longitude);
             pstmt.setBigDecimal(4, latitude);
+            pstmt.setString(5, storeName);
             rs = pstmt.executeQuery();
             while(rs.next()) {
                 String[] infoValue = new String[5];
