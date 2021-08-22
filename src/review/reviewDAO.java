@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class reviewDAO {
 
     public static ArrayList<String[]> getStoreReview(Integer restID) {
-        String SQL = "SELECT userID, contents, score FROM REVIEW WHERE restID = ?";
+        String SQL = "SELECT userID, contents, score, createdAt FROM REVIEW WHERE restID = ?";
         ArrayList<String[]> review = new ArrayList<String[]>();
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -19,10 +19,11 @@ public class reviewDAO {
             pstmt.setInt(1, restID);
             rs = pstmt.executeQuery();
             while(rs.next()) {
-                String[] reviewValue = new String[3];
+                String[] reviewValue = new String[4];
                 reviewValue[0] = rs.getString(1);
                 reviewValue[1] = rs.getString(2);
                 reviewValue[2] = rs.getString(3);
+                reviewValue[3] = rs.getString(4);
                 review.add(reviewValue);
             }
         } catch (Exception e) {
