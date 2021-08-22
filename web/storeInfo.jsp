@@ -310,11 +310,11 @@
                 <div class="card-header bg-light">
                     <div class="row">
                         <div class="col-3 text-left"><strong><%=nickname%></strong></div>
-                        <div class="col-3 text-end">
+                        <div class="col-6 text-end">
                             <img src="./image/star.svg" style="width:15px">
                             <strong><%= reviewValue[3]%></strong>
                         </div>
-                        <div class="col-6 text-end">
+                        <div class="col-3 text-end">
                             <strong><%= reviewValue[4]%></strong>
                         </div>
                     </div>
