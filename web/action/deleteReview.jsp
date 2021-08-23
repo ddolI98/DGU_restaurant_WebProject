@@ -4,14 +4,16 @@
 <%@ page import="java.io.PrintWriter"%>
 <%
     request.setCharacterEncoding("UTF-8");
-    int result = -1;
+    int result1 = -1;
+    int result2 = -1;
     String reviewID = null;
     reviewDAO reviewdao = new reviewDAO();
     if(request.getParameter("reviewID") != null) {
         reviewID = (String) request.getParameter("reviewID");
-        result = reviewdao.deleteReview(reviewID);
+        result1 = reviewdao.deleteReviewRecommend(reviewID);
+        result2 = reviewdao.deleteReview(reviewID);
     }
-    if(result == 1) {
+    if(result1 == 1 && result2 == 1) {
         PrintWriter script = response.getWriter();
         script.println("<script>");
         script.println("alert('리뷰가 삭제되었습니다.');");

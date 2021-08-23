@@ -71,7 +71,7 @@ public class reviewDAO {
     }
 
     public static ArrayList<String[]> myReview(String userID) {
-        String SQL = "SELECT restID, contents, score, reviewID FROM REVIEW WHERE userID = ?";
+        String SQL = "SELECT restID, contents, score, reviewID, createdAt FROM REVIEW WHERE userID = ?";
         ArrayList<String[]> review = new ArrayList<String[]>();
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -82,11 +82,12 @@ public class reviewDAO {
             pstmt.setString(1, userID);
             rs = pstmt.executeQuery();
             while(rs.next()) {
-                String[] reviewValue = new String[4];
+                String[] reviewValue = new String[5];
                 reviewValue[0] = rs.getString(1);
                 reviewValue[1] = rs.getString(2);
                 reviewValue[2] = rs.getString(3);
                 reviewValue[3] = rs.getString(4);
+                reviewValue[4] = rs.getString(5);
                 review.add(reviewValue);
             }
         } catch (Exception e) {
@@ -117,6 +118,20 @@ public class reviewDAO {
 
     public static int deleteReview(String reviewID) {
         String SQL = "DELETE FROM REVIEW WHERE reviewID = ?";
+
+        try {
+            Connection conn = databaseUtil.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, reviewID);
+            return pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    public static int deleteReviewRecommend(String reviewID) {
+        String SQL = "DELETE FROM REVIEWRECOMMEND WHERE reviewID = ?";
 
         try {
             Connection conn = databaseUtil.getConnection();
@@ -200,5 +215,4 @@ public class reviewDAO {
         }
         return count;
     }
-
 }
