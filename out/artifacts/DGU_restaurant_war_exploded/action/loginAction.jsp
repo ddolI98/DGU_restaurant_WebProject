@@ -32,7 +32,7 @@
 
         session.setAttribute("userID", info[0]);
         session.setAttribute("userName", info[1]);
-        session.setAttribute("nickname", info[2]);
+        session.setAttribute("nickName", info[2]);
         session.setAttribute("mailAddress", info[3]);
         session.setAttribute("userAge", info[4]);
         session.setAttribute("phoneNumber", info[5]);

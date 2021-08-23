@@ -35,7 +35,7 @@ public class userDAO {
     }
 
     public static String[] getInfo(String loginID) {
-        String SQL = "SELECT userID, userName, nickname, mailAddress, userAge, phoneNumber, userAddress FROM USER WHERE loginID = ?";
+        String SQL = "SELECT userID, userName, nickName, mailAddress, userAge, phoneNumber, userAddress FROM USER WHERE loginID = ?";
         String[] info = new String[7];
         Connection conn = null;
         PreparedStatement pstmt = null;
