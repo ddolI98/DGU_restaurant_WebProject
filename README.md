@@ -73,7 +73,7 @@ JSP를 이용한 동국대학교 주변 식당 예약 및 후기 공유 웹 사�
 
 ##### 5. 마이페이지
 
-![image-20210827230838947](C:\Users\eunyoung\AppData\Roaming\Typora\typora-user-images\image-20210827230838947.png)
+![image](https://user-images.githubusercontent.com/45346786/131142430-84a3a33f-1369-4c6f-adcf-05d1ca2c8744.png)
 
 
 
