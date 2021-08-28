@@ -46,25 +46,21 @@ JSP를 이용한 동국대학교 주변 식당 정보 조회 및 후기 공유 �
 ![image](https://user-images.githubusercontent.com/45346786/131139091-940d665d-3be5-488c-9af3-3372f5c83bf8.png)
 
 
-<br>
 ##### 2. 로그인 화면
 
 ![image](https://user-images.githubusercontent.com/45346786/131139395-3a021481-391a-451a-8415-c0dfdb0d975e.png)
 
 
-<br>
 ##### 3. 회원가입 화면
 
 ![image](https://user-images.githubusercontent.com/45346786/131139629-52d0e2a6-f2a3-4df5-8306-7cefe671136d.png)
 
 
-<br>
 ##### 4. 식당 상세 화면
 
 ![image](https://user-images.githubusercontent.com/45346786/131140121-c54c52fa-f9d5-481f-a4a5-20bd93c72098.png)
 
 
-<br>
 ##### 5. 마이페이지
 
 ![image](https://user-images.githubusercontent.com/45346786/131142430-84a3a33f-1369-4c6f-adcf-05d1ca2c8744.png)
