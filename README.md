@@ -38,6 +38,8 @@ JSP를 이용한 동국대학교 주변 식당 정보 조회 및 후기 공유 �
 <br><br>
 ### 시연영상
 [Youtube](https://www.youtube.com/watch?v=zNzMoNpvKk8)
+
+
 <br><br>
 ### 실행화면
 
